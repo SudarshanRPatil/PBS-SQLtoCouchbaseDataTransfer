@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlToCouchbaseMigrationTool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{9A3C0E5C-705F-4301-AF66-FD853178781D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConsolidator", "DataConsolidator\DataConsolidator.csproj", "{1C514D4A-9A98-4332-BB9D-44D1EC41224A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,18 @@ Global
 		{9A3C0E5C-705F-4301-AF66-FD853178781D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A3C0E5C-705F-4301-AF66-FD853178781D}.Stage|Any CPU.ActiveCfg = Stage|Any CPU
 		{9A3C0E5C-705F-4301-AF66-FD853178781D}.Stage|Any CPU.Build.0 = Stage|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.PreQA|Any CPU.ActiveCfg = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.PreQA|Any CPU.Build.0 = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Prod|Any CPU.ActiveCfg = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Prod|Any CPU.Build.0 = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.QA|Any CPU.Build.0 = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Stage|Any CPU.ActiveCfg = Release|Any CPU
+		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Stage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
