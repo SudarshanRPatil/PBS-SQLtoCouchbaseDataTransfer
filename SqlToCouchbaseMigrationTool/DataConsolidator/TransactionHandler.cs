@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess;
 
 namespace DataConsolidator
 {
@@ -12,11 +11,16 @@ namespace DataConsolidator
     {
         public List<TransactionDetails> GetAllTransactions(string memberId)
         {
-            List<spGetTranscationDetailsResult> transactions = Get
+            DateTime fromDate = DateTime.Now.AddDays(-1).Date;
+            DateTime toDate = DateTime.Now.Date;
+            var operations = new Operations();
+            List<spGetTranscationDetailsResult> transactions = operations.GetTranscationDetails(fromDate, toDate);
+            List<TransactionDetails> cbTransactionDetailList = new List<TransactionDetails>();
             if (transactions != null)
             {
-                List<TransactionDetails> cbTransactionDetailList = Translator.ToCBTransactionDetail(transactions);
+                cbTransactionDetailList = Translator.ToCBTransactionDetail(transactions);
             }
+            return cbTransactionDetailList;
         }
     }
 }

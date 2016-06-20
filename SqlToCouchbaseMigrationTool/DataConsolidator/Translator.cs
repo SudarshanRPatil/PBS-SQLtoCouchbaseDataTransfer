@@ -27,7 +27,7 @@ namespace DataConsolidator
                         ConversionFactor = transaction.ConversionFactor,
                         USDEquivalentAmount = transaction.UsdEquivalentAmount,
                         SoftCashProgram = transaction.SoftcashProgram.ToCBSoftCashProgram(),
-                        Timestamp = transaction.Timestamp,
+                        Timestamp = transaction.Timestamp, 
                         Reason = transaction.Reason,
                         Comment = transaction.Comment,
                         Validity = transaction.Validity,
@@ -38,7 +38,7 @@ namespace DataConsolidator
                         Source = new Model.Source
                         {
                             Application = transaction.Application,
-                        }
+                        },
                         RequesterName = transaction.RequesterUserName,
                         //RedemptionDetails
                     };
@@ -66,7 +66,7 @@ namespace DataConsolidator
         internal static AvailibilityType ToCBAvailabilityType(this string availability)
         {
             AvailibilityType cbAvailabilityType;
-            Enum.TryParse(softcashProgram, out cbAvailabilityType);
+            Enum.TryParse(availability, out cbAvailabilityType);
             return cbAvailabilityType;
         }
 

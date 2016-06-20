@@ -19,27 +19,27 @@ namespace DataConsolidator
 
         public string Currency { get; set; }
 
-        public float Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        public float ConversionFactor { get; set; }
+        public decimal? ConversionFactor { get; set; }
 
-        public float USDEquivalentAmount { get; set; }
+        public decimal? USDEquivalentAmount { get; set; }
 
         public CategoryType SoftCashProgram { get; set; }
 
-        public DateTime Timestamp { get; set; }
+        public DateTime? Timestamp { get; set; }
 
         public string Reason { get; set; }
 
         public string Comment { get; set; }
 
-        public DateTime Validity { get; set; }
+        public DateTime? Validity { get; set; }
 
         public AvailibilityType Availability { get; set; }
 
         public TransactionStatusType TransactionStatus { get; set; }
 
-        public float ClosingAmount { get; set; }
+        public decimal? ClosingAmount { get; set; }
 
         public Source Source { get; set; }
 
