@@ -24,4 +24,14 @@
       <Column Name="Username" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.spMemberExistsInMemberDetails" Method="spMemberExistsInMemberDetails">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="spMemberExistsInMemberDetailsResult">
+      <Column Name="MemberName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberShips" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberShipStatus" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberCountry" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

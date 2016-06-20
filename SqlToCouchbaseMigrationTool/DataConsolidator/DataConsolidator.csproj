@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountHandler.cs" />
+    <Compile Include="AccountHandler\AccountHandler.cs" />
     <Compile Include="Model\Membership.cs" />
     <Compile Include="Model\Owner.cs" />
     <Compile Include="Model\RedemptionDetails.cs" />
