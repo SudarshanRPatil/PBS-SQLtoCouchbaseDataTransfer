@@ -14,7 +14,7 @@ namespace DataConsolidator
             DateTime fromDate = DateTime.Now.AddDays(-1).Date;
             DateTime toDate = DateTime.Now.Date;
             var operations = new Operations();
-            List<spGetTranscationDetailsByTimeStampResult> transactions = operations.GetTranscationDetailsByTimeStamp(fromDate, toDate);
+            List<spGetTranscationDetailsResult> transactions = operations.GetTranscationDetails(memberId,fromDate, toDate);
             List<TransactionDetails> cbTransactionDetailList = new List<TransactionDetails>();
             if (transactions != null)
             {

@@ -21,13 +21,15 @@ namespace SqlToCouchbaseMigrationTool
                 toDate = Convert.ToDateTime(ConfigurationManager.AppSettings[Constants.ToDate]);
             }
 
-            GetTranscationDetails(fromDate, toDate);
+            const string memberId = "3285301";
+
+            GetTranscationDetails(memberId,fromDate, toDate);
         }
 
-        private static void GetTranscationDetails(DateTime fromDate, DateTime toDate)
+        private static void GetTranscationDetails(string memberId,DateTime fromDate, DateTime toDate)
         {
             var ops = new DataAccess.Operations();
-            var getSuccessStatResult = ops.GetTranscationDetailsByTimeStamp(fromDate, toDate);
+            var getSuccessStatResult = ops.GetTranscationDetails(memberId, fromDate, toDate);
         }
     }
 }

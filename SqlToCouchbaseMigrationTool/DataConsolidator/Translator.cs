@@ -9,7 +9,7 @@ namespace DataConsolidator
 {
     public static class Translator
     {
-        internal static List<TransactionDetails> ToCbTransactionDetail(List<spGetTranscationDetailsByTimeStampResult> transactions)
+        internal static List<TransactionDetails> ToCbTransactionDetail(List<spGetTranscationDetailsResult> transactions)
         {
             if (transactions != null && transactions.Count > 0)
             {
