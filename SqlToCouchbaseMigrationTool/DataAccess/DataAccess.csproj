@@ -60,6 +60,7 @@
       <DependentUpon>DataMigrationTool.dbml</DependentUpon>
     </Compile>
     <Compile Include="DbConfigurations.cs" />
+    <Compile Include="IOperation.cs" />
     <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

@@ -22,9 +22,9 @@ namespace DataAccess
         }
 
 
-        public spMemberExistsInMemberDetailsResult GetMemberDetails(string memberName)
+        public spMemberExistsInMemberDetailsResult GetMemberDetails(string MemberName)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
