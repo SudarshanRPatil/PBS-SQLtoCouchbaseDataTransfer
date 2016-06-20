@@ -8,23 +8,41 @@ namespace DataAccess
 {
     public class Operations : IOperation
     {
-        public List<spGetTranscationDetailsResult> GetTranscationDetails(DateTime fromDate, DateTime toDate)
+        public List<spGetTranscationDetailsByTimeStampResult> GetTranscationDetailsByTimeStamp(DateTime fromDate, DateTime toDate)
         {
-            var getSuccessStatResult = new List<spGetTranscationDetailsResult>();
+            var travelCreditDbDataContext = new TravelCreditDBDataContext();
 
-            DataMigrationDbContext.UsingCommonContentDbRead(db =>
-            {
-                getSuccessStatResult = db.spGetTranscationDetails(fromDate, toDate).ToList();
-            });
+            List<spGetTranscationDetailsByTimeStampResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetailsByTimeStamp(fromDate, toDate).ToList();
 
             return getSuccessStatResult;
-
         }
 
-
-        public spMemberExistsInMemberDetailsResult GetMemberDetails(string MemberName)
+        public List<spGetTranscationDetailsByMemberNameResult> GetTranscationDetailsByUserName(string userName)
         {
-            throw new NotImplementedException();
+            var travelCreditDbDataContext = new TravelCreditDBDataContext();
+
+            List<spGetTranscationDetailsByMemberNameResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetailsByMemberName(userName).ToList();
+
+            return getSuccessStatResult;
+        }
+
+        public List<spMemberExistsInMemberDetailsResult> GetMemberDetails(string memberName)
+        {
+
+            var travelCreditDbDataContext = new TravelCreditDBDataContext();
+
+            List<spMemberExistsInMemberDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spMemberExistsInMemberDetails(memberName).ToList();
+
+            return getSuccessStatResult;
+        }
+
+        public List<spGetProductDetailsByConfirmationNumberResult> GetProductDetailsByConfirmationNumber(string confirmationNumber)
+        {
+            var tripDbDataContext = new TripDBDataContext();
+
+            List<spGetProductDetailsByConfirmationNumberResult> getSuccessStatResult = tripDbDataContext.spGetProductDetailsByConfirmationNumber(confirmationNumber).ToList();
+
+            return getSuccessStatResult;
         }
     }
 }

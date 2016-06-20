@@ -8,8 +8,9 @@ namespace DataAccess
 {
     public interface IOperation
     {
-        List<spGetTranscationDetailsResult> GetTranscationDetails(DateTime fromDate, DateTime toDate);
-        spMemberExistsInMemberDetailsResult GetMemberDetails(string memberName);
-
+        List<spGetTranscationDetailsByTimeStampResult> GetTranscationDetailsByTimeStamp(DateTime fromDate, DateTime toDate);
+        List<spGetTranscationDetailsByMemberNameResult> GetTranscationDetailsByUserName(string userName);
+        List<spMemberExistsInMemberDetailsResult> GetMemberDetails(string memberName);
+        List<spGetProductDetailsByConfirmationNumberResult> GetProductDetailsByConfirmationNumber(string confirmationNumber);
     }
 }

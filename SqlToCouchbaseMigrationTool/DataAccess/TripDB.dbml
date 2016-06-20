@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dTrip" Class="TripDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=agni;Initial Catalog=dTrip;User ID=xmlwebsvc" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="dTripConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spGetProductDetailsByConfirmationNumber" Method="spGetProductDetailsByConfirmationNumber">
+    <Parameter Name="ConfirmationNumber" Parameter="confirmationNumber" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="spGetProductDetailsByConfirmationNumberResult">
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="FareSourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FareSourceName" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

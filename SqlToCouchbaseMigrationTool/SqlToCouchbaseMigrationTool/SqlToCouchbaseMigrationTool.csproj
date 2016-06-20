@@ -120,6 +120,10 @@
       <Project>{9a3c0e5c-705f-4301-af66-fd853178781d}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataConsolidator\DataConsolidator.csproj">
+      <Project>{1c514d4a-9a98-4332-bb9d-44d1ec41224a}</Project>
+      <Name>DataConsolidator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />

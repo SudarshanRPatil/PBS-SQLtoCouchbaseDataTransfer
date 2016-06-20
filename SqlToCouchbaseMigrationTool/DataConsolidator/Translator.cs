@@ -9,7 +9,7 @@ namespace DataConsolidator
 {
     public static class Translator
     {
-        internal static List<TransactionDetails> ToCBTransactionDetail(List<spGetTranscationDetailsResult> transactions)
+        internal static List<TransactionDetails> ToCbTransactionDetail(List<spGetTranscationDetailsByTimeStampResult> transactions)
         {
             if (transactions != null && transactions.Count > 0)
             {
@@ -42,6 +42,7 @@ namespace DataConsolidator
                         RequesterName = transaction.RequesterUserName,
                         //RedemptionDetails
                     };
+                    cbTransactiondetails.Add(transactionDetail);
                 }
                 return cbTransactiondetails;
             }

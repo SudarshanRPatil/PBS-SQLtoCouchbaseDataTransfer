@@ -32,5 +32,15 @@ namespace DataAccess.Properties {
                 return ((string)(this["mTravelCreditConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=agni;Initial Catalog=dTrip;User ID=xmlwebsvc;Password=cvsbewlmx")]
+        public string dTripConnectionString {
+            get {
+                return ((string)(this["dTripConnectionString"]));
+            }
+        }
     }
 }
