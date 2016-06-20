@@ -8,20 +8,12 @@ namespace DataAccess
 {
     public class Operations : IOperation
     {
-        public List<spGetTranscationDetailsByTimeStampResult> GetTranscationDetailsByTimeStamp(DateTime fromDate, DateTime toDate)
+
+        public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName, DateTime fromDate, DateTime toDate)
         {
             var travelCreditDbDataContext = new TravelCreditDBDataContext();
 
-            List<spGetTranscationDetailsByTimeStampResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetailsByTimeStamp(fromDate, toDate).ToList();
-
-            return getSuccessStatResult;
-        }
-
-        public List<spGetTranscationDetailsByMemberNameResult> GetTranscationDetailsByUserName(string userName)
-        {
-            var travelCreditDbDataContext = new TravelCreditDBDataContext();
-
-            List<spGetTranscationDetailsByMemberNameResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetailsByMemberName(userName).ToList();
+            List<spGetTranscationDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetails(userName, fromDate, toDate).ToList();
 
             return getSuccessStatResult;
         }
