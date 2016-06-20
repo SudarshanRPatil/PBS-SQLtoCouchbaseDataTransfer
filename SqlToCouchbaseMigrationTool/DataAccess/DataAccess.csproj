@@ -53,13 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataMigrationDbContext.cs" />
-    <Compile Include="DataMigrationTool.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataMigrationTool.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="DbConfigurations.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,25 +61,45 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TravelCreditDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelCreditDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="TripDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TripDB.dbml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DataMigrationTool.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataMigrationTool.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TravelCreditDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TravelCreditDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TripDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TripDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataMigrationTool.dbml.layout">
-      <DependentUpon>DataMigrationTool.dbml</DependentUpon>
+    <None Include="TravelCreditDB.dbml.layout">
+      <DependentUpon>TravelCreditDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TripDB.dbml.layout">
+      <DependentUpon>TripDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

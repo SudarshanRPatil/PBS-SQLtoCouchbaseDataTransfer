@@ -14,11 +14,11 @@ namespace DataConsolidator
             DateTime fromDate = DateTime.Now.AddDays(-1).Date;
             DateTime toDate = DateTime.Now.Date;
             var operations = new Operations();
-            List<spGetTranscationDetailsResult> transactions = operations.GetTranscationDetails(fromDate, toDate);
+            List<spGetTranscationDetailsByTimeStampResult> transactions = operations.GetTranscationDetailsByTimeStamp(fromDate, toDate);
             List<TransactionDetails> cbTransactionDetailList = new List<TransactionDetails>();
             if (transactions != null)
             {
-                cbTransactionDetailList = Translator.ToCBTransactionDetail(transactions);
+                cbTransactionDetailList = Translator.ToCbTransactionDetail(transactions);
             }
             return cbTransactionDetailList;
         }

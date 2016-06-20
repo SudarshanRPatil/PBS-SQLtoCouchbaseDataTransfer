@@ -27,7 +27,7 @@ namespace SqlToCouchbaseMigrationTool
         private static void GetTranscationDetails(DateTime fromDate, DateTime toDate)
         {
             var ops = new DataAccess.Operations();
-            var getSuccessStatResult = ops.GetTranscationDetails(fromDate, toDate);
+            var getSuccessStatResult = ops.GetTranscationDetailsByTimeStamp(fromDate, toDate);
         }
     }
 }
