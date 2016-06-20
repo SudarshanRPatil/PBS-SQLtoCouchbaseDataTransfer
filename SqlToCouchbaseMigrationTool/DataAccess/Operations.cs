@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class Operations
+    public class Operations : IOperation
     {
         public List<spGetTranscationDetailsResult> GetTranscationDetails(DateTime fromDate, DateTime toDate)
         {
@@ -19,6 +19,12 @@ namespace DataAccess
 
             return getSuccessStatResult;
 
+        }
+
+
+        public spMemberExistsInMemberDetailsResult GetMemberDetails(string MemberName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

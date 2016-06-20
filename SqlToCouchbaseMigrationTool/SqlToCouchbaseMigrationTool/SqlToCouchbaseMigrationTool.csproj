@@ -62,9 +62,6 @@
       <HintPath>..\packages\CouchbaseNetClient.2.2.8\lib\net45\Couchbase.NetClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CouchBaseConnector">
-      <HintPath>..\CouchBaseConnector\bin\Debug\CouchBaseConnector.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -115,6 +112,10 @@
     <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CouchBaseConnector\CouchBaseConnector.csproj">
+      <Project>{677b9e4c-6a74-4ec2-95c9-aaf7129152e2}</Project>
+      <Name>CouchBaseConnector</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{9a3c0e5c-705f-4301-af66-fd853178781d}</Project>
       <Name>DataAccess</Name>

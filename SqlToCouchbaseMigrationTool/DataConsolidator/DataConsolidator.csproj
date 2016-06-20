@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PIMS.Client">
+      <HintPath>..\References\PIMS\PIMS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="PIMS.DataContract">
+      <HintPath>..\References\PIMS\PIMS.DataContract.dll</HintPath>
+    </Reference>
+    <Reference Include="PIMS.V1">
+      <HintPath>..\References\PIMS\PIMS.V1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -37,9 +46,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tavisca.Frameworks.Analytics">
+      <HintPath>..\References\PIMS\Tavisca.Frameworks.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavisca.Frameworks.Infrastructure">
+      <HintPath>..\References\PIMS\Tavisca.Frameworks.Infrastructure.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountHandler.cs" />
+    <Compile Include="AccountHandler\AccountHandler.cs" />
+    <Compile Include="Model\MemberDetails.cs" />
     <Compile Include="Model\Membership.cs" />
     <Compile Include="Model\Owner.cs" />
     <Compile Include="Model\RedemptionDetails.cs" />

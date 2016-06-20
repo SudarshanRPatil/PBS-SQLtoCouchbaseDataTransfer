@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConsolidator", "DataConsolidator\DataConsolidator.csproj", "{1C514D4A-9A98-4332-BB9D-44D1EC41224A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{6DF0F936-C7F3-4715-A2FD-4D6289E79EF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PIMS", "PIMS", "{FE7FE487-2AC4-4641-A045-191493792794}"
+	ProjectSection(SolutionItems) = preProject
+		References\PIMS\PIMS.Client.dll = References\PIMS\PIMS.Client.dll
+		References\PIMS\PIMS.DataContract.dll = References\PIMS\PIMS.DataContract.dll
+		References\PIMS\PIMS.V1.dll = References\PIMS\PIMS.V1.dll
+		References\PIMS\Tavisca.Frameworks.Analytics.dll = References\PIMS\Tavisca.Frameworks.Analytics.dll
+		References\PIMS\Tavisca.Frameworks.Infrastructure.dll = References\PIMS\Tavisca.Frameworks.Infrastructure.dll
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchBaseConnector", "CouchBaseConnector\CouchBaseConnector.csproj", "{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}"
 EndProject
 Global
@@ -70,5 +81,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE7FE487-2AC4-4641-A045-191493792794} = {6DF0F936-C7F3-4715-A2FD-4D6289E79EF2}
 	EndGlobalSection
 EndGlobal
