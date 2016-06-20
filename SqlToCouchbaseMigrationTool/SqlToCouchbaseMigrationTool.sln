@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PIMS", "PIMS", "{FE7FE487-2
 		References\PIMS\Tavisca.Frameworks.Infrastructure.dll = References\PIMS\Tavisca.Frameworks.Infrastructure.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchBaseConnector", "CouchBaseConnector\CouchBaseConnector.csproj", "{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,18 @@ Global
 		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Stage|Any CPU.ActiveCfg = Release|Any CPU
 		{1C514D4A-9A98-4332-BB9D-44D1EC41224A}.Stage|Any CPU.Build.0 = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.PreQA|Any CPU.ActiveCfg = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.PreQA|Any CPU.Build.0 = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Prod|Any CPU.ActiveCfg = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Prod|Any CPU.Build.0 = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.QA|Any CPU.Build.0 = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Stage|Any CPU.ActiveCfg = Release|Any CPU
+		{677B9E4C-6A74-4EC2-95C9-AAF7129152E2}.Stage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

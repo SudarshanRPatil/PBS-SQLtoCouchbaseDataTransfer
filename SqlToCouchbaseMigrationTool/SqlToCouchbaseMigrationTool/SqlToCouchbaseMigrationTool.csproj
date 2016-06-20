@@ -112,6 +112,10 @@
     <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CouchBaseConnector\CouchBaseConnector.csproj">
+      <Project>{677b9e4c-6a74-4ec2-95c9-aaf7129152e2}</Project>
+      <Name>CouchBaseConnector</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{9a3c0e5c-705f-4301-af66-fd853178781d}</Project>
       <Name>DataAccess</Name>
