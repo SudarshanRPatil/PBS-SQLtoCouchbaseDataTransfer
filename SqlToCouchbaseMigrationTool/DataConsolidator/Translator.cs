@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using DataConsolidator.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,46 +10,54 @@ namespace DataConsolidator
 {
     public static class Translator
     {
-        internal static List<TransactionDetails> ToCbTransactionDetail(List<spGetTranscationDetailsResult> transactions)
+        internal static List<TransactionDetails> ToCBTransactionDetailList(List<spGetTranscationDetailsResult> transactions, Owner owner)
         {
             if (transactions != null && transactions.Count > 0)
             {
                 List<TransactionDetails> cbTransactiondetails = new List<TransactionDetails>();
                 foreach (var transaction in transactions)
                 {
-                    var transactionDetail = new TransactionDetails
-                    {
-                        DocumentId = new Guid().ToString(),
-                        TransactionId = transaction.TransactionId.ToString(),
-                        ReferenceTransactionId = transaction.ReferenceTransactionId.ToString(),
-                        TransactionType = transaction.TransactionType.ToCBTransactionType(),
-                        Currency = transaction.Currency,
-                        Amount = transaction.Amount,
-                        ConversionFactor = transaction.ConversionFactor,
-                        USDEquivalentAmount = transaction.UsdEquivalentAmount,
-                        SoftCashProgram = transaction.SoftcashProgram.ToCBSoftCashProgram(),
-                        Timestamp = transaction.Timestamp, 
-                        Reason = transaction.Reason,
-                        Comment = transaction.Comment,
-                        Validity = transaction.Validity,
-                        Availability = transaction.Availability.ToCBAvailabilityType(),
-                        TransactionStatus = transaction.TransactionStatus.ToCBTransactionStatus(),
-                        //ClosingAmount = transaction.ClosingAmount,
-                        //Owner  
-                        Source = new Model.Source
-                        {
-                            Application = transaction.Application,
-                        },
-                        RequesterName = transaction.RequesterUserName,
-                        //RedemptionDetails
-                    };
-                    cbTransactiondetails.Add(transactionDetail);
+                    var cbTransaction = ToCBTransactionDetails(transaction, owner);
+                    cbTransactiondetails.Add(cbTransaction);
                 }
                 return cbTransactiondetails;
             }
             return new List<TransactionDetails>();
             
         }
+
+        internal static TransactionDetails ToCBTransactionDetails(spGetTranscationDetailsResult transaction, Owner owner)
+        {
+            var transactionDetail = new TransactionDetails
+            {
+                DocumentId = new Guid().ToString(),
+                TransactionId = transaction.TransactionId.ToString(),
+                ReferenceTransactionId = transaction.ReferenceTransactionId.ToString(),
+                TransactionType = transaction.TransactionType.ToCBTransactionType(),
+                Currency = transaction.Currency,
+                Amount = transaction.Amount,
+                ConversionFactor = transaction.ConversionFactor,
+                USDEquivalentAmount = transaction.UsdEquivalentAmount,
+                SoftCashProgram = transaction.SoftcashProgram.ToCBSoftCashProgram(),
+                Timestamp = transaction.Timestamp,
+                Reason = transaction.Reason,
+                Comment = transaction.Comment,
+                Validity = transaction.Validity,
+                Availability = transaction.Availability.ToCBAvailabilityType(),
+                TransactionStatus = transaction.TransactionStatus.ToCBTransactionStatus(),
+                //ClosingAmount = transaction.ClosingAmount,
+                Owner = owner,
+                Source = new Model.Source
+                {
+                    Application = transaction.Application,
+                },
+                RequesterName = transaction.RequesterUserName,
+                //RedemptionDetails
+            };
+            return transactionDetail;
+        }
+
+
 
         internal static TransactionType ToCBTransactionType(this string transactionType)
         {

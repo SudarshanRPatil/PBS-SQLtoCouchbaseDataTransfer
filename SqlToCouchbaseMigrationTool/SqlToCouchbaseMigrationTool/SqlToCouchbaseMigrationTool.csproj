@@ -62,9 +62,23 @@
       <HintPath>..\packages\CouchbaseNetClient.2.2.8\lib\net45\Couchbase.NetClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CouchBaseConnector">
+      <HintPath>..\CouchBaseConnector\bin\Debug\CouchBaseConnector.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="PIMS.Client, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PIMS\PIMS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="PIMS.DataContract, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PIMS\PIMS.DataContract.dll</HintPath>
+    </Reference>
+    <Reference Include="PIMS.V1">
+      <HintPath>..\References\PIMS\PIMS.V1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -74,6 +88,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tavisca.Frameworks.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PIMS\Tavisca.Frameworks.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavisca.Frameworks.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PIMS\Tavisca.Frameworks.Infrastructure.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
@@ -112,10 +134,6 @@
     <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CouchBaseConnector\CouchBaseConnector.csproj">
-      <Project>{677b9e4c-6a74-4ec2-95c9-aaf7129152e2}</Project>
-      <Name>CouchBaseConnector</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{9a3c0e5c-705f-4301-af66-fd853178781d}</Project>
       <Name>DataAccess</Name>
