@@ -15,7 +15,7 @@ namespace DataConsolidator
 
         public string ReferenceTransactionId { get; set; }
 
-        public TransactionType TransactionType { get; set; }
+        public string TransactionType { get; set; }
 
         public string Currency { get; set; }
 
@@ -25,7 +25,7 @@ namespace DataConsolidator
 
         public decimal? USDEquivalentAmount { get; set; }
 
-        public CategoryType SoftCashProgram { get; set; }
+        public string SoftCashProgram { get; set; }
 
         public DateTime? Timestamp { get; set; }
 
@@ -35,9 +35,9 @@ namespace DataConsolidator
 
         public DateTime? Validity { get; set; }
 
-        public AvailibilityType Availability { get; set; }
+        public string Availability { get; set; }
 
-        public TransactionStatusType TransactionStatus { get; set; }
+        public string TransactionStatus { get; set; }
 
         public decimal? ClosingAmount { get; set; }
 
@@ -48,26 +48,12 @@ namespace DataConsolidator
         public string RequesterName { get; set; }
 
         public RedemptionDetails RedemptionDetails { get; set; }
-
-    }
-
-    public enum TransactionType
-    {
-        Credit = 0,
-        Debit = 1
-    }
-
-    public enum CategoryType
-    {
-        RoviaBucks = 0,
-        TravelDollars = 1
-
     }
 
     public enum AvailibilityType
     {
         Immediate = 0,
-        Accrual = 1
+        Accrued = 1
     }
 
     public enum TransactionStatusType

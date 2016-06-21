@@ -9,15 +9,6 @@ namespace DataConsolidator.Model
     {
         public string Type { get; set; }
 
-        public StatusType Status { get; set; }
-    }
-
-    public enum StatusType
-    {
-        Active = 0,
-        Cancelled = 1,
-        Expired = 2,
-        InActive = 3,
-        InGrace = 4
+        public string Status { get; set; }
     }
 }
