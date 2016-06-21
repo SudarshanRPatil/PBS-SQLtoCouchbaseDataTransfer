@@ -9,8 +9,6 @@ namespace DataAccess
 {
     public class Operations : IOperation
     {
-        
-
         public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName)
         {
             var travelCreditDbDataContext = new TravelCreditDBDataContext();
@@ -31,23 +29,18 @@ namespace DataAccess
 
         public List<spMemberExistsInMemberDetailsResult> GetMemberDetails(string memberName)
         {
-
             var travelCreditDbDataContext = new TravelCreditDBDataContext();
-             var getSuccessStatResult =new List<spMemberExistsInMemberDetailsResult>();
+            var getSuccessStatResult = new List<spMemberExistsInMemberDetailsResult>();
             try
             {
-                   getSuccessStatResult = travelCreditDbDataContext.spMemberExistsInMemberDetails(memberName).ToList();
-            
-                
+                getSuccessStatResult = travelCreditDbDataContext.spMemberExistsInMemberDetails(memberName).ToList();
             }
             catch (Exception)
             {
-                
-               //TODO: log exception /handle
+                //TODO: log exception /handle
             }
 
             return getSuccessStatResult;
-          
         }
 
         public bool InsertMemberDetails(Owner memberDetails)
@@ -59,11 +52,9 @@ namespace DataAccess
         {
             var tripDbDataContext = new TripDBDataContext();
 
-            List<spGetProductDetailsByConfirmationNumberResult> getSuccessStatResult =
-                tripDbDataContext.spGetProductDetailsByConfirmationNumber(confirmationNumber).ToList();
+            List<spGetProductDetailsByConfirmationNumberResult> getSuccessStatResult = tripDbDataContext.spGetProductDetailsByConfirmationNumber(confirmationNumber).ToList();
 
             return getSuccessStatResult;
-
         }
 
         public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName, DateTime fromDate, DateTime toDate)

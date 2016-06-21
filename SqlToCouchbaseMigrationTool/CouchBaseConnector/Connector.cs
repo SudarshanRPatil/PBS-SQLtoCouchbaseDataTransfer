@@ -13,13 +13,13 @@ namespace CouchBaseConnector
 {
     public class Connector
     {
-        public bool Save<T>(string key, T obj, TimeSpan timeSpan)
+        public bool Save<T>(string key, T obj)
         {
             using (var cluster = new Cluster())
             {
                 using (var bucket = cluster.OpenBucket(AppSettings.DefaultBucket))
                 {
-                    IOperationResult res = bucket.Upsert(key, obj, timeSpan);
+                    IOperationResult res = bucket.Upsert(key, obj);
                     if (res.Status == ResponseStatus.Success)
                         return true;
                 }
