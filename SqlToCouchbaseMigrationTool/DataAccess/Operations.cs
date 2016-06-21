@@ -45,7 +45,20 @@ namespace DataAccess
 
         public bool InsertMemberDetails(Owner memberDetails)
         {
-            throw new NotImplementedException();
+            var travelCreditDbDataContext = new TravelCreditDBDataContext();
+            bool result;
+            try
+            {
+                travelCreditDbDataContext.spInsertMemberInMemberDetails(memberDetails.Username,memberDetails.Memberships,memberDetails.MembershipStatuses,memberDetails.CountryOfResidence);
+                result= true;
+
+            }
+            catch (Exception)
+            {
+                result=false;
+                //TODO: log exception /handle
+            }
+            return result;
         }
 
         public List<spGetProductDetailsByConfirmationNumberResult> GetProductDetailsByConfirmationNumber(string confirmationNumber)
