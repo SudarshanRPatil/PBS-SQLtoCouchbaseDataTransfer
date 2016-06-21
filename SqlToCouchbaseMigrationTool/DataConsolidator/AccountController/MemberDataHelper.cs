@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using DBO = DataAccess.Model;
 using DataConsolidator.Model;
 
 namespace DataConsolidator
@@ -26,6 +27,11 @@ namespace DataConsolidator
                 return memberDetails;
             }
             return memberDetails;
+        }
+
+        public void StoreMemberDetailsInDB(Owner memberDetails)
+        {
+            
         }
 
         private List<Membership> GetMemberShipDetails(string memberShipTypes, string memberShipStatuses)
