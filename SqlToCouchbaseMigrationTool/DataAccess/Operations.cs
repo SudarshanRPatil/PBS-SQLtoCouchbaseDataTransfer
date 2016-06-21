@@ -11,11 +11,20 @@ namespace DataAccess
     {
         
 
-        public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName, DateTime fromDate, DateTime toDate)
+        public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName)
         {
             var travelCreditDbDataContext = new TravelCreditDBDataContext();
 
-            List<spGetTranscationDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetails(userName, fromDate, toDate).ToList();
+            List<spGetTranscationDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetails(userName, null, null).ToList();
+
+            return getSuccessStatResult;
+        }
+
+        public List<spGetTranscationDetailsResult> GetTranscationDetails(DateTime fromDate, DateTime toDate)
+        {
+            var travelCreditDbDataContext = new TravelCreditDBDataContext();
+
+            List<spGetTranscationDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spGetTranscationDetails(null, fromDate, toDate).ToList();
 
             return getSuccessStatResult;
         }
@@ -36,6 +45,7 @@ namespace DataAccess
                 
                //TODO: log exception /handle
             }
+
             return getSuccessStatResult;
           
         }
@@ -54,6 +64,11 @@ namespace DataAccess
 
             return getSuccessStatResult;
 
+        }
+
+        public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName, DateTime fromDate, DateTime toDate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
