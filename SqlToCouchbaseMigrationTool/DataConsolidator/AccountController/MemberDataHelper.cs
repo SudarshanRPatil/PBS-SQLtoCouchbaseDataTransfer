@@ -29,11 +29,12 @@ namespace DataConsolidator
             return memberDetails;
         }
 
-        public void StoreMemberDetailsInDB(Owner memberDetails)
+        public bool StoreMemberDetailsInDB(Owner memberDetails)
         {
 
             DBO.Owner dbMemberDetails = TransalateToDBOwner(memberDetails);
-            var result = new Operations().InsertMemberDetails(dbMemberDetails);
+          var result=  new Operations().InsertMemberDetails(dbMemberDetails);
+            return result;
 
         }
 

@@ -22,13 +22,25 @@ namespace DataConsolidator
         public Owner GetMemberAccountDetails(string userName)
         {
             //TODO: add error handling . if account retrived from vexiere is null throw exception
-            var memberDetails = _memberDataHelper.RetrieveMemberDetailsFromDB(userName);
-            if(memberDetails==null)
+            try
             {
-             memberDetails=   GetAccountDetailsFromVexiere(userName);
-             _memberDataHelper.StoreMemberDetailsInDB(memberDetails);
-            }                     
-            return memberDetails;
+                var memberDetails = _memberDataHelper.RetrieveMemberDetailsFromDB(userName);
+                if (memberDetails == null)
+                {
+                    memberDetails = GetAccountDetailsFromVexiere(userName);
+                    if (memberDetails == null)
+                        throw new Exception(string.Format("Member with username {0} does not exists in a system", userName));
+
+                    _memberDataHelper.StoreMemberDetailsInDB(memberDetails);
+                }
+                return memberDetails;
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            return null;
         }
 
 
@@ -36,7 +48,7 @@ namespace DataConsolidator
         {
             var vexiereUser = GetAccountDetailsByUserName(userName);
 
-            if(vexiereUser!=null)
+            if (vexiereUser != null)
             {
                 var memberDetails = new Owner
                 {
@@ -48,7 +60,7 @@ namespace DataConsolidator
                 return memberDetails;
             }
             return null;
-        }   
+        }
 
 
         private List<Membership> GetMemberShipDetails(PD.User account)
@@ -65,6 +77,7 @@ namespace DataConsolidator
                                                                                   };
                                                                  memberShips.Add(memberShip);
                                                              });
+
             }
             return memberShips;
         }
