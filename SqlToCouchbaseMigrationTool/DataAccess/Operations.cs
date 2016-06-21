@@ -8,6 +8,7 @@ namespace DataAccess
 {
     public class Operations : IOperation
     {
+        
 
         public List<spGetTranscationDetailsResult> GetTranscationDetails(string userName, DateTime fromDate, DateTime toDate)
         {
@@ -22,19 +23,31 @@ namespace DataAccess
         {
 
             var travelCreditDbDataContext = new TravelCreditDBDataContext();
-
-            List<spMemberExistsInMemberDetailsResult> getSuccessStatResult = travelCreditDbDataContext.spMemberExistsInMemberDetails(memberName).ToList();
-
+             var getSuccessStatResult =new List<spMemberExistsInMemberDetailsResult>();
+            try
+            {
+                   getSuccessStatResult = travelCreditDbDataContext.spMemberExistsInMemberDetails(memberName).ToList();
+            
+                
+            }
+            catch (Exception)
+            {
+                
+               //TODO: log exception /handle
+            }
             return getSuccessStatResult;
+          
         }
 
         public List<spGetProductDetailsByConfirmationNumberResult> GetProductDetailsByConfirmationNumber(string confirmationNumber)
         {
             var tripDbDataContext = new TripDBDataContext();
 
-            List<spGetProductDetailsByConfirmationNumberResult> getSuccessStatResult = tripDbDataContext.spGetProductDetailsByConfirmationNumber(confirmationNumber).ToList();
+            List<spGetProductDetailsByConfirmationNumberResult> getSuccessStatResult =
+                tripDbDataContext.spGetProductDetailsByConfirmationNumber(confirmationNumber).ToList();
 
             return getSuccessStatResult;
+
         }
     }
 }

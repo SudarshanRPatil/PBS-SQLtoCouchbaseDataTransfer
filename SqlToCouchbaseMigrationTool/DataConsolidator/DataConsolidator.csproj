@@ -54,7 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountHandler\AccountHandler.cs" />
+    <Compile Include="AccountController\AccountHandler.cs" />
+    <Compile Include="AccountController\MemberDataHelper.cs" />
     <Compile Include="Model\MemberDetails.cs" />
     <Compile Include="Model\Membership.cs" />
     <Compile Include="Model\Owner.cs" />
