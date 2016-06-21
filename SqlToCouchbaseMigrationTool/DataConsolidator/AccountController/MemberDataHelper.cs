@@ -29,8 +29,33 @@ namespace DataConsolidator
             return memberDetails;
         }
 
-        public void StoreMemberDetailsInDB(Owner memberDetails)
+        public bool StoreMemberDetailsInDB(Owner memberDetails)
         {
+
+            DBO.Owner dbMemberDetails = TransalateToDBOwner(memberDetails);
+          var result=  new Operations().InsertMemberDetails(dbMemberDetails);
+            return result;
+
+        }
+
+        private DBO.Owner TransalateToDBOwner(Owner memberDetails)
+        {
+            var membershipTypes = new List<string>();           
+            var membershipStatuses = new List<string>();
+            foreach (var membership in memberDetails.Memberships)
+            {
+                membershipTypes.Add(membership.Type);
+                membershipStatuses.Add(membership.Status.ToString());
+            }
+            var dbMemberDetails = new DBO.Owner
+                {
+                    CountryOfResidence = memberDetails.CountryOfResidence,
+                    Username = memberDetails.Username,
+                    Memberships = string.Join("|",membershipTypes.ToArray()),
+                    MembershipStatuses = string.Join("|",membershipStatuses.ToArray())
+                };
+
+            return dbMemberDetails;
         }
 
         private List<Membership> GetMemberShipDetails(string memberShipTypes, string memberShipStatuses)

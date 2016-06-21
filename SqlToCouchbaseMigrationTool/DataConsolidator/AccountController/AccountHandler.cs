@@ -21,26 +21,47 @@ namespace DataConsolidator
 
         public Owner GetMemberAccountDetails(string userName)
         {
-            //TODO : get details from table . if not esists fetch them from vexiere and store in table
+            //TODO: add error handling . if account retrived from vexiere is null throw exception
+            try
+            {
+                var memberDetails = _memberDataHelper.RetrieveMemberDetailsFromDB(userName);
+                if (memberDetails == null)
+                {
+                    memberDetails = GetAccountDetailsFromVexiere(userName);
+                    if (memberDetails == null)
+                        throw new Exception(string.Format("Member with username {0} does not exists in a system", userName));
 
-            var memberDetails = _memberDataHelper.RetrieveMemberDetailsFromDB(userName) ?? GetAccountDetailsFromVexiere(userName);
+                    _memberDataHelper.StoreMemberDetailsInDB(memberDetails);
+                }
+                return memberDetails;
+            }
+            catch (Exception ex)
+            {
 
-            return memberDetails;
+
+            }
+            return null;
         }
 
 
-        private Owner GetAccountDetailsFromVexiere(string userName)
+        public Owner GetAccountDetailsFromVexiere(string userName)
         {
             var vexiereUser = GetAccountDetailsByUserName(userName);
-            var memberDetails = new Owner
-                                {
-                                    Username = vexiereUser.UserName,
-                                    CountryOfResidence = (vexiereUser.Profile != null) ? vexiereUser.Profile.CountryCode : string.Empty,
-                                    Memberships = GetMemberShipDetails(vexiereUser)
-                                };
 
-            return memberDetails;
+            if (vexiereUser != null)
+            {
+                var memberDetails = new Owner
+                {
+                    Username = vexiereUser.UserName,
+                    CountryOfResidence = (vexiereUser.Profile != null) ? vexiereUser.Profile.CountryCode : string.Empty,
+                    Memberships = GetMemberShipDetails(vexiereUser)
+                };
+
+                return memberDetails;
+            }
+            return null;
         }
+
 
         private List<Membership> GetMemberShipDetails(PD.User account)
         {
@@ -56,6 +77,7 @@ namespace DataConsolidator
                                                                                   };
                                                                  memberShips.Add(memberShip);
                                                              });
+
             }
             return memberShips;
         }
